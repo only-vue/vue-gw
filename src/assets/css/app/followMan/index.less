@@ -1,0 +1,127 @@
+.follow-warp{
+	background: #F8F8F8;
+	.right-warp{
+		position: absolute;
+		right: 15px;
+		top: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		color: #5BBEF5;
+		flex-flow: row;
+		.op-check{
+			margin: 0 10px 0;
+			.icon{
+				width: 16px;
+				height: 16px;
+				display: inline-block;
+				background: url(../../../images/icon/check.png) no-repeat;
+				background-size:16px 16px; 
+				vertical-align: -3px;
+				margin: 0 4px 0;
+			}
+			.checked{
+				position: relative;
+				background: url(../../../images/icon/checked.png) no-repeat;
+				background-size:16px 16px; 
+
+			}
+		}
+		.op-search{
+			width: 20px;
+			height: 20px;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+.follow-list{
+  position: relative;
+  .item{
+    background: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    color: #666;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    .user{
+      height: 40px;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      color: #333;
+      .icon{
+        width: 50px;
+        img{
+          width: 40px;
+          height: 40px;
+          border-radius:100%;
+          border: solid 1px #eee; 
+        }
+      }
+      .content{
+        width: calc(100% - 50px);
+        font-size: 16px;
+        span{
+          margin: 0 0 0 20px;
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+    .other{
+      margin: 10px 0 0;
+      display: inline-block;
+      width: 100%;
+      p{
+        line-height: 22px;
+      }
+    }
+    .identity{
+      position: absolute;
+      right:30px;
+      bottom: 15px;
+      display: flex;
+      flex-flow: row wrap; 
+      width: 100px;
+      li{
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        margin: 0 10px 10px 0;
+        border-radius:100%; 
+      }
+      .l{
+        background: #01D4FF;
+      }
+      .g{
+        background: #6FB84F;
+      }
+      .t{
+        background: #FC8E1F;
+      }
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      border: solid #666;
+      border-width: 0 1px 1px 0;
+      display: inline-block;
+      padding: 6px;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+  }
+}
+.report{
+  background: #F8F8F8;
+}
