@@ -2,7 +2,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import './assets/css/base.css'
+import './assets/css/base.less'
 import 'swiper/dist/css/swiper.css'
 import 'lib-flexible/flexible'
 import Util from './utils/util'
