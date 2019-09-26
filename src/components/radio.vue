@@ -1,7 +1,7 @@
 <template>
     <section>
        <van-radio-group v-model="radio" @change="onChange">
-				 <van-radio :name="item.id" v-for="(item,index) in list" :key="index">{{item.text}}</van-radio>
+				 <van-radio :name="item" v-for="(item,index) in list" :key="index">{{item}}</van-radio>
 			</van-radio-group>
     </section>
 </template>

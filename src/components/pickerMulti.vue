@@ -28,7 +28,7 @@ export default {
         return {
             popup: false,
             list: [],
-            value: "",
+            value:null,
             result: []
         };
     },
@@ -36,17 +36,20 @@ export default {
     watch: {
         columns(news, old) {
             if (news) {
-                this.list = news;
+								this.list = news;
+								
             }
         },
         initValue(news, old) {
             if (news) {
-                this.initValue = news;
+                this.result = news;
             }
         }
     },
     mounted() {
-        this.list = this.columns;
+				this.list = this.columns;
+				this.result=this.initValue;
+				this.getResult();
     },
     methods: {
         //弹出弹出框
@@ -60,18 +63,22 @@ export default {
         //获取选择复选框值
         onChange(value) {
             this.result = value;
-        },
+				},
+				//重新赋值回显数据
+				getResult(){
+						let tempText = [];
+						this.result.forEach(v => {
+								this.list.forEach(k => {
+										if (v == k.id) {
+												tempText.push(k.text);
+										}
+								});
+						});
+						this.value = tempText.join(',');
+				},
         //确认
         onConfirm(value) {
-            let tempText = [];
-            this.result.forEach(v => {
-                this.list.forEach(k => {
-                    if (v == k.id) {
-                        tempText.push(k.text);
-                    }
-                });
-            });
-            this.value = tempText;
+					  this.getResult();
             this.$emit("confirm", this.result);
             this.popup = false;
         },

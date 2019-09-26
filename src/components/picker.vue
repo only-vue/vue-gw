@@ -36,7 +36,7 @@ export default {
     },
     mounted() {
         this.list = this.columns;
-        this.showValue();
+				this.showValue();
     },
     methods: {
         //弹出弹出框
@@ -45,15 +45,19 @@ export default {
         },
         showValue() {
             this.list.forEach(el => {
-                if (el.id == this.initValue) {
-                    this.value = el.text;
+                if (el.id && el.text) {
+                    if (el.id == this.initValue) {
+                        this.value = el.text;
+                    }
+                } else {
+                    this.value = this.initValue;
                 }
             });
         },
         //确认
         onConfirm(value) {
-            this.value = value.text;
-            this.$emit("confirm", value.id);
+            this.value = value.text ? value.text : value;
+            this.$emit("confirm", value.id ? value.id : value);
             this.popup = false;
         },
         //取消

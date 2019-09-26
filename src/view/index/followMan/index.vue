@@ -12,7 +12,7 @@
         </Header>
         <div class="follow-list">
             <router-link
-                to="/followMan/reportG"
+                :to="'/followMan/report'+followType"
                 class="item"
                 v-for="(item,index) in list"
                 :key="index"
@@ -39,8 +39,12 @@
                 </div>
             </router-link>
         </div>
-
-        <Dialog title="搜索条件" :show="isSearch" @handleConfirm="handleConfirm" @handleCancel="handleCancel">
+        <Dialog
+            title="搜索条件"
+            :show="isSearch"
+            @handleConfirm="handleConfirm"
+            @handleCancel="handleCancel"
+        >
             <div slot="main">
                 <input placeholder="请输入搜索内容" />
             </div>
@@ -50,7 +54,7 @@
 
 <script>
 import Header from "../../../components/header"; //首页
-import Dialog from "../../../components/dialog"; //首页
+import Dialog from "../../../components/dialog"; //弹出框组件
 export default {
     components: {
         Header,
@@ -60,6 +64,9 @@ export default {
         return {
             isCheck: false,
             isSearch: false,
+            followType: this.$route.query.followType
+                ? this.$route.query.followType
+                : "G",
             list: [
                 {
                     icon: require("../../../assets/images/user/admin.jpg"),
@@ -104,11 +111,11 @@ export default {
         //点击搜索确认
         handleConfirm() {
             this.isSearch = false;
-				},
-				//点击搜索取消
-				handleCancel(){
-					 this.isSearch = false;
-				}
+        },
+        //点击搜索取消
+        handleCancel() {
+            this.isSearch = false;
+        }
     }
 };
 </script>

@@ -519,7 +519,8 @@ input {
 * 表单的单选radio样式控制
 */
 .report-form .van-radio-group {
-  display: flex;
+	display: flex;
+	flex-wrap: wrap;
 }
 .report-form .van-radio-group .van-radio {
   margin: 0 5px;
@@ -553,7 +554,6 @@ input {
   border: 0 !important;
 }
 
-
 /**
 * 表单样式固化
 */
@@ -563,13 +563,13 @@ input {
     box-shadow: 2px 1px 8px rgba(0, 0, 0, 0.15);
     background: #fff;
     border-radius: 5px;
-		padding: 0 10px;
-		margin-top: 15px;
+    padding: 0 10px;
+    margin-top: 15px;
     .title {
       img {
         width: 20px;
         height: 20px;
-				margin-right: 5px;
+        margin-right: 5px;
       }
       height: 46px;
       display: flex;
@@ -577,29 +577,99 @@ input {
       border-bottom: 1px solid #dcdfe6;
       font-size: 14px;
       font-weight: bold;
-      color: rgba(0, 0, 0, 0.85);
+			color: rgba(0, 0, 0, 0.85);
+			position: relative;
+			.add{
+				position: absolute;
+				right: 5px;
+				color: #409eff;
+				top: 12px;
+			}
     }
     .con {
       .van-row {
-				font-size: 12px;
+        font-size: 12px;
         color: #606266;
         border-bottom: 1px solid #eee;
-				padding: 10px;
-				.van-col--7 {
-					text-align: right;
-					padding-right: 10px;
-				}
+        padding: 10px;
+        .van-col--7 {
+          text-align: right;
+          padding-right: 10px;
+        }
         .required {
           color: #f56c6c;
           margin-right: 4px;
         }
         &:last-of-type {
           border-bottom: 0;
-				}
-				.van-col--17 {
-					padding: 0 0 0 10px;
-				}
+        }
+        .van-col--17 {
+          padding: 0 0 0 10px;
+        }
       }
+		}
+		.list{
+			position: relative;
+			padding: 5px 0;
+			.item{
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-flow: row wrap;
+				border-bottom: solid 1px #eee; 
+        li{
+					width: 50%;
+					font-size: 12px;
+					padding: 5px 0;
+				} 
+				&:last-child{
+					border: none;
+				}
+			}
+		}
+  }
+  .form-btn {
+    display: flex;
+    justify-content: center;
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+			border-radius: 4px;
+			margin: 20px;
+    }
+    .submit-btn {
+      color: #fff;
+      background-color: #409eff;
+      border-color: #409eff;
+    }
+    .reset-btn {
+      background: #fff;
+      border: 1px solid #dcdfe6;
+      color: #606266;
     }
   }
+}
+
+.full{
+	position: fixed;
+    top: 0!important;
+    left: 0!important;
+    overflow: hidden;
+    width: 100%!important;
+    height: 100%;
+    font-size: 0.426667rem;
+    -webkit-transition: .3s;
+    transition: .3s;
+    border-radius: 0.106667rem;
+    background-color: #fff;
+    /* -webkit-transform: translate3d(-50%,-50%,0); */
+     transform: translate3d(0,0,0)!important; 
+    -webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		.van-dialog__content{
+			height: calc(100% - 100px);
+		}
+		.van-col{
+			padding: 0!important;
+		}
 }

@@ -4,6 +4,7 @@
             v-model="newShow"
             :title="title?title:'提示'"
 						show-cancel-button
+						:class="className&&className"
             :show-confirm-button="true"
 						:beforeClose="beforeClose"
         >
@@ -18,16 +19,17 @@
             newShow: this.show
         };
     },
-		props: ["title","show"],
+		props: ["title","show","className"],
 		watch:{
       show(news,old){
 				if(news){
 					this.newShow=news;
 				}
-			}
+			},
+			
 		},
     mounted() {
-        
+       
 		},
 		methods:{
 				//关闭弹窗调用

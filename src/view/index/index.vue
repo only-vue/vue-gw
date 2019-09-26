@@ -93,22 +93,22 @@ export default {
         {
           icon: require("../../assets/images/icon/m3.png"),
           name: "高血压随访",
-          link: "/followMan/index"
+          link: "/followMan/index?followType=G"
         },
         {
           icon: require("../../assets/images/icon/m3.png"),
           name: "糖尿病随访",
-          link: "/followMan/index"
+          link: "/followMan/index?followType=T"
         },
         {
           icon: require("../../assets/images/icon/m3.png"),
           name: "肺结核随访",
-          link: "/followMan/index"
+          link: "/followMan/index?followType=F"
         },
         {
           icon: require("../../assets/images/icon/m3.png"),
           name: "精神病随访",
-          link: "/followMan/index"
+          link: "/followMan/index?followType=J"
         },
         {
           icon: require("../../assets/images/icon/m4.png"),
